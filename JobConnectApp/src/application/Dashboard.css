@@ -1,0 +1,45 @@
+/* General Layout */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #f9f9f9;
+}
+
+/* Header Styling */
+.header {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444;
+    -fx-padding: 10px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20px;
+}
+
+.sidebar .nav-button {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.sidebar .nav-button:hover {
+    -fx-background-color: #3b5998;
+}
+
+/* Main Content Styling */
+.welcome {
+    -fx-font-size: 18px;
+    -fx-text-fill: #666;
+}
+
+/* Footer Styling */
+.footer {
+    -fx-font-size: 12px;
+    -fx-text-fill: #999;
+    -fx-padding: 10px;
+}
