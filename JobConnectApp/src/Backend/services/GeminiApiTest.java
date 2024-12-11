@@ -14,30 +14,29 @@ import com.fasterxml.jackson.core.type.TypeReference;
 					
 					public class GeminiApiTest {
 					
-			            static String apiKey =
-			            	//	"AIzaSyAht5pxPN33AQAxr_ShRkf3mzxInleGQYk";
-			            	"AIzaSyAz98maC18FUMebRvZPype0XluzSgKg4MQ";	
+			            static String apiKey = System.getenv("API_KEY2");
 			            static // API URL
-			            String apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + apiKey;
+			            String apiUrl = System.getenv("API_URL") + apiKey;
 			
-			            public static void main(String[] args) {
-			                try {
-			                    List<String> jobRequirements = List.of("Java", "Spring", "Microservices");
-			                    GeminiApiTest geminiApiTest = new GeminiApiTest();
-			                    List<Course> courses = geminiApiTest.fetchCourses(jobRequirements);
-
-			                    if (courses.isEmpty()) {
-			                        System.out.println("No courses were recommended.");
-			                    } else {
-			                        System.out.println("Recommended Courses:");
-			                        for (Course course : courses) {
-			                            System.out.println(course);
-			                        }
-			                    }
-			                } catch (Exception e) {
-			                    e.printStackTrace();
-			                }
-			            }    private String generateCoursePrompt(List<String> jobRequirements) {
+//			            public static void main(String[] args) {
+//			                try {
+//			                    List<String> jobRequirements = List.of("Java", "Spring", "Microservices");
+//			                    GeminiApiTest geminiApiTest = new GeminiApiTest();
+//			                    List<Course> courses = geminiApiTest.fetchCourses(jobRequirements);
+//
+//			                    if (courses.isEmpty()) {
+//			                        System.out.println("No courses were recommended.");
+//			                    } else {
+//			                        System.out.println("Recommended Courses:");
+//			                        for (Course course : courses) {
+//			                            System.out.println(course);
+//			                        }
+//			                    }
+//			                } catch (Exception e) {
+//			                    e.printStackTrace();
+//			                }
+//			            }
+			            private String generateCoursePrompt(List<String> jobRequirements) {
 					        String joinedRequirements = String.join(", ", jobRequirements);
 					        return "Based on the skills: " + joinedRequirements + 
 					               ", recommend 5 online courses. Provide the following details for each course:\n" +
@@ -225,10 +224,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 
 					    public List<Question> fetchQuestions(String jobRequirement) {
 					        List<Question> questions = new ArrayList<>();
-					        String apiKey =
-				            	//	"AIzaSyAht5pxPN33AQAxr_ShRkf3mzxInleGQYk";
-					        "AIzaSyAz98maC18FUMebRvZPype0XluzSgKg4MQ";	
-					        String apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + apiKey;
 
 					        try {
 					            

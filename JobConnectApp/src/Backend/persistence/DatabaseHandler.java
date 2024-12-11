@@ -18,9 +18,9 @@ import java.util.stream.Collectors;
 
 public class DatabaseHandler {
 	private static DatabaseHandler instance;
-    private static final String DB_URL = "jdbc:sqlserver://MOMINS-COMPUTER\\SQLEXPRESS02:1433;databaseName=JobConnectApp;encrypt=true;trustServerCertificate=true;";
-    private static final String DB_USERNAME = "momin";
-    private static final String DB_PASSWORD = "12";
+    private static final String DB_URL = System.getenv("DB_URL");
+    private static final String DB_USERNAME = System.getenv("DB_USERNAME");
+    private static final String DB_PASSWORD = System.getenv("DB_PASSWORD");
     private Connection connection;
     
     private DatabaseHandler() {
